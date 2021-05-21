@@ -22,6 +22,7 @@
     if (isset($_POST['ajout'])) {
         $tokken = mt_rand(9999999,999999999999999);
         ModelUser::EnvoieDonnee($_POST['nom'], $_POST['prenom'], $_POST['mail'],password_hash($_POST['pass'], PASSWORD_DEFAULT) , $_POST['tel'], $tokken);
+        ModelUser::uniciteMail($_POST['mail']);
     } else {
         ViewUser::ajoutUser();
     }
