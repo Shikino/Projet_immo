@@ -1,6 +1,5 @@
 <?php
 require_once "../model/ModelUser.php";
-require_once "../utils/Utils.php";
 
 class ViewUser
 {

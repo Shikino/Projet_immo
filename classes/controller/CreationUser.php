@@ -16,13 +16,15 @@
     require_once "../view/ViewUser.php";
     require_once "../model/ModelUser.php";
     require_once "../view/ViewTemplate.php";
-    require_once "../utils/Utils.php";
 
     ViewTemplate::menu();
     if (isset($_POST['ajout'])) {
-        $tokken = mt_rand(9999999,999999999999999);
-        ModelUser::EnvoieDonnee($_POST['nom'], $_POST['prenom'], $_POST['mail'],password_hash($_POST['pass'], PASSWORD_DEFAULT) , $_POST['tel'], $tokken);
-        ModelUser::uniciteMail($_POST['mail']);
+        if ((ModelUser::verificationMail($_POST['mail']))) {
+            echo "Le mail est déjà utilisé";
+        } else {
+            $tokken = mt_rand(100000, 99999999);
+            ModelUser::EnvoieDonnee($_POST['nom'], $_POST['prenom'], $_POST['mail'], password_hash($_POST['pass'], PASSWORD_DEFAULT), $_POST['tel'], $tokken); 
+        }
     } else {
         ViewUser::ajoutUser();
     }
