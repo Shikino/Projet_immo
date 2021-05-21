@@ -29,4 +29,6 @@ class ModelUser
 
         return $requete->fetch();
     }
+
+
 }
