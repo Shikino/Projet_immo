@@ -19,7 +19,7 @@
     require_once "../view/ViewTemplate.php";
 
 
-    function Tokken($length) {
+    function token($length) {
         return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
     }
     
@@ -30,8 +30,9 @@
         if ((ModelUser::verificationMail($_POST['mail']))) {
             echo "Le mail est déjà utilisé";
         } else {
-            ModelUser::EnvoieDonnee($_POST['nom'], $_POST['prenom'], $_POST['mail'], password_hash($_POST['pass'], PASSWORD_DEFAULT), $_POST['tel'], Tokken(30));
-
+            $token = mt_rand(99999, 99999999);
+            ModelUser::EnvoieDonnee($_POST['nom'], $_POST['prenom'], $_POST['mail'], password_hash($_POST['pass'], PASSWORD_DEFAULT), $_POST['tel'], $token);
+            viewUser::lienValidation($token, $_POST['mail']);
         }
     } else {
         ViewUser::ajoutUser();

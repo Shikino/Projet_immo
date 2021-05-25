@@ -30,7 +30,10 @@ class ViewTemplate
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="creationuser.php">Creation user</a>
+                        <a class="nav-link" href="creationuser.php">Créer un compte</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="ConnectionUser.php">Se connecter</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="listeusers.php">Liste User</a>
