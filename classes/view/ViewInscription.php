@@ -1,5 +1,5 @@
 <?php
-require_once "../model/ModelInscription.php";
+require_once "../model/ModelUser.php";
 
 class ViewInscription
 {

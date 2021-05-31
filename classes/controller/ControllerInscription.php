@@ -15,7 +15,7 @@
 
     <?php
     require_once "../view/ViewInscription.php";
-    require_once "../model/ModelInscription.php";
+    require_once "../model/ModelUser.php";
     require_once "../view/ViewTemplate.php";
     
      
