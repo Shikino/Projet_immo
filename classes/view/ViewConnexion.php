@@ -23,10 +23,10 @@ class ViewConnexion
             </form>
         </div>
         <div class="container mt-2">
-            <div> <a href="NouveauMdp.php">Mot de passe oublié ?</a></div>
+            <div> <a href="../controller/ControllerNouveauMdp">Mot de passe oublié ?</a></div>
             <div>
                 <h3>Pas encore inscrit ?</h3>
-                <a type="submit" id="connexion" name="inscription" href="<?php echo "../controller/CreationUser.php" ?>" class="btn btn-success">Inscription</a>
+                <a type="submit" id="connexion" name="inscription" href="<?php echo "../controller/ControllerInscription.php" ?>" class="btn btn-success">Inscription</a>
             </div>
 
         </div>

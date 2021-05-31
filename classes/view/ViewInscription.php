@@ -33,7 +33,7 @@ class ViewInscription
     }
     public static function lienValidation($lien, $mail)
     { ?>
-        <div>Veuillez cliquer <a href="ConnexionUser.php?token=<?php echo $lien ?>&mail=<?php echo $mail ?>">ici</a> pour confirmer votre inscription.</div>
+        <div>Veuillez cliquer <a href="ControllerConnexion.php?token=<?php echo $lien ?>&mail=<?php echo $mail ?>">ici</a> pour confirmer votre inscription.</div>
 <?php
     }
 }

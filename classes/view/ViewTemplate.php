@@ -12,7 +12,6 @@ class ViewTemplate
     }
     public static function header()
     {
-        Define("adresseRoot", "/classes/controller/");
         session_start();
 
     ?>
@@ -26,7 +25,7 @@ class ViewTemplate
             <link rel="stylesheet" href="../../css/bootstrap.min.css" />
             <link rel="stylesheet" href="../../css/all.min.css" />
             <link rel="stylesheet" href="../../css/styles.css" />
-            
+
             <title>Inscription</title>
         </head>
 
@@ -51,8 +50,8 @@ class ViewTemplate
                         <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
                             <ul class="navbar-nav">
                                 <?php
-                                // condition pour ne plus afficher le inscription qd on est co
-                                if (isset($_SESSION["connect"])) { ?>
+
+                                if (isset($_SESSION["connexion"])) { ?>
 
                                 <?php
 
@@ -68,8 +67,8 @@ class ViewTemplate
                                 }
                                 ?>
                                 <?php
-                                // condition pour  afficher le voir mon profil qd on est co
-                                if (isset($_SESSION["connect"])) { ?>
+
+                                if (isset($_SESSION["connexion"])) { ?>
                                     <li class="nav-item">
 
                                         <a class="nav-link" href="ControllerVoirMonProfil.php?mail=<?php echo $_SESSION['mail'] ?>">Voir mon profil</a>
@@ -88,10 +87,10 @@ class ViewTemplate
 
 
                                 <?php
-                                // condition pour ne plus afficher le connexion qd on est co
-                                if (isset($_SESSION["connect"])) { ?>
+
+                                if (isset($_SESSION["connexion"])) { ?>
                                     <li class="nav-item">
-                                        <a class="nav-link" href=<?php echo adresseRoot . "ControllerDeconnexion.php" ?>>Déconnexion</a>
+                                        <a class="nav-link" href=<?php echo "ControllerDeconnexion.php" ?>>Déconnexion</a>
 
                                     </li>
                                 <?php
@@ -100,7 +99,7 @@ class ViewTemplate
                                 ?>
                                     <li class="nav-item">
 
-                                        <a class="nav-link" href=<?php echo adresseRoot . "ControllerConnexion.php" ?>>Connexion</a>
+                                    <a class="nav-link" href=<?php echo "ControllerConnexion.php" ?>>Connexion</a>
 
                                     </li>
                                 <?php
@@ -112,13 +111,13 @@ class ViewTemplate
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Pages
                                     </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"><?php if (isset($_SESSION["connect"])) { ?>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"><?php if (isset($_SESSION["connexion"])) { ?>
                                             <a class="dropdown-item" href="ControllerCreationAnonce.php">Creer une annonce</a>
                                             <a class="dropdown-item" href="blog-single.html">Parcourir les anonces</a>
                                             <a class="dropdown-item" href="agents-grid.html">Voir Favoris</a>
 
                                         <?php } else { ?>
-                                            <a class="dropdown-item" href="property-single.html">pas co pas d'annonce</a>
+                                            <a class="dropdown-item" href="property-single.html">Les annonces</a>
                                             <a class="dropdown-item" href="blog-single.html">Parcourir les anonces</a>
 
 
