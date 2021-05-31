@@ -27,7 +27,7 @@ ViewTemplate::navbar();
             $token = uniqid();
             ModelUser::envoieDonnee($_POST['nom'], $_POST['prenom'], $_POST['mail'], password_hash($_POST['pass'], PASSWORD_DEFAULT), $_POST['tel'], $token);
             ViewInscription::lienValidation($token, $_POST['mail']);
-            
+            ModelUser::verificationUser($mail, $token);
         }
     } else {
         ViewInscription::inscription();
